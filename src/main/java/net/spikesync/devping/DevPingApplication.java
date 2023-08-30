@@ -1,19 +1,19 @@
 package net.spikesync.devping;
 
+import java.util.Collections;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-//@ImportResource({"classpath*:beans.xml"}) //The file isn't read
+//@ImportResource({"classpath*:beans.xml"}) //The file isn't read with this line!
 
-@Configuration
+@SpringBootConfiguration
 @EnableAutoConfiguration
 @ImportResource(locations = {"classpath:META-INF/spring/beans.xml"})
 
@@ -21,18 +21,21 @@ public class DevPingApplication implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(DevPingApplication.class);
 
-    @Autowired 
-    private Pojo pojo;
+    @Autowired
+    private SilverCloud sc;
     
-//    @Autowired
-//    private NoClass noclass;
-
     public static void main(String[] args) {
-        SpringApplication.run(DevPingApplication.class, args);
+    	SpringApplication devPingApp = new SpringApplication(DevPingApplication.class);
+    	devPingApp.setDefaultProperties(Collections.singletonMap("server.port", "8091"));
+        devPingApp.run(args);
     }
 
     public void run(String... args) {
-        logger.info(pojo.getField());
+        logger.info("SilverCloud nodes:    " + sc.getScNodes().toString());
+        logger.info("EXECUTING : command line runner");
+        
+        for (int i = 0; i < args.length; ++i) {
+            logger.info("args[{}]: {}", i, args[i]);
+        }
     }
-
 }
