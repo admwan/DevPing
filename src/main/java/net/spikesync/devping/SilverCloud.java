@@ -6,15 +6,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 
-
 public class SilverCloud {
 
-	private HashMap<String, String> scNodes;
+	private HashMap<SilverCloudNode, String> scNodes;
 
-	public SilverCloud(HashMap<String, String> scN) {
+	public SilverCloud(HashMap<SilverCloudNode, String> scN) {
 		this.scNodes = scN;
 
 	}
-	
-	public HashMap<String,String> getScNodes() { return this.scNodes; }
+
+	public HashMap<SilverCloudNode, String> getScNodes() {
+		return this.scNodes;
+	}
+
+	public static enum SilverCloudNode {
+		SURFIE, CAPTUW, THORFW, LOKIFS, SCARFS, HYDRFS, ASGAFS
+	}
 }
