@@ -15,7 +15,7 @@
 
 	<util:map id="scNodeIpMap" map-class="java.util.HashMap"
 		key-type="java.lang.String" value-type="java.lang.String">
-		<entry key="SURFIE" value="192.168.50.101" />
+		<entry key="SURFIE" value="192.168.50.100" />
 		<entry key="CAPTUW" value="192.168.50.104" />
 		<entry key="THORFW" value="192.168.50.107" />
 		<entry key="LOKIFS" value="192.168.50.110" />
