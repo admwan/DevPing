@@ -29,7 +29,7 @@ public class DevPingApplicationTest {
 
     @Test
     @EnabledIf("testingEnabled")
-    public void silverCloudTest(ApplicationContext context) {
+    public void silverCloudTest() {
  
  
     	assertThat(sc.getScNodes())
