@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>DevPing first test-page</title>
+  </head>
+  
+  <body>
+    <h1>Welcome to the Home page of the DevPing test-rig.</h1>
+    <img th:src="@{/images/Silversurfer.png}"/>
+    <br><br>
+    <a th:href="@{/pingermatrix}" id="pingermatrix">Show the Silvercloud Pinger Matrix.</a>
+  </body>
+</html>

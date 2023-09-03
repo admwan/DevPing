@@ -5,10 +5,11 @@ import java.util.Collections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+//import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 //@ImportResource({"classpath*:beans.xml"}) //The file isn't read with this line!
@@ -16,8 +17,9 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootConfiguration
 @EnableAutoConfiguration
 @ImportResource(locations = {"classpath:META-INF/spring/beans.xml"})
-
-public class DevPingApplication implements CommandLineRunner {
+//@ImportResource(locations = {"classpath:/static/templates/schome.html") JE KAN HIER GEEN TWEE VAN HEBBEN!
+@SpringBootApplication
+public class DevPingApplication { // implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(DevPingApplication.class);
 
@@ -26,6 +28,7 @@ public class DevPingApplication implements CommandLineRunner {
     
     public static void main(String[] args) {
     	SpringApplication devPingApp = new SpringApplication(DevPingApplication.class);
+    	logger.info("Starting DevPingApplication");
     	devPingApp.setDefaultProperties(Collections.singletonMap("server.port", "8091"));
         devPingApp.run(args);
     }
