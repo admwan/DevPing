@@ -29,7 +29,7 @@ public class DevPingApplication { // implements CommandLineRunner {
     public static void main(String[] args) {
     	SpringApplication devPingApp = new SpringApplication(DevPingApplication.class);
     	logger.info("Starting DevPingApplication");
-    	devPingApp.setDefaultProperties(Collections.singletonMap("server.port", "8091"));
+    	devPingApp.setDefaultProperties(Collections.singletonMap("server.port", "8098"));
         devPingApp.run(args);
     }
 
