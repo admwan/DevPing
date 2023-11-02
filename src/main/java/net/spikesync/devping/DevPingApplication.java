@@ -16,8 +16,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootConfiguration
 @EnableAutoConfiguration
-@ImportResource(locations = {"classpath:META-INF/spring/beans.xml"})
-//@ImportResource(locations = {"classpath:/static/templates/schome.html") JE KAN HIER GEEN TWEE VAN HEBBEN!
+@ImportResource(locations = {"classpath:beans.xml"})
 @SpringBootApplication
 public class DevPingApplication { // implements CommandLineRunner {
 
